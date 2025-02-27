@@ -35,6 +35,11 @@ wp-config.php
 # htaccess
 /.htaccess
 
+# Misc Ignore
+.DS_Store
+local-xdebuginfo.php
+pixelbloom.code-workspace
+
 # All plugins
 #
 # Note: If you wish to whitelist plugins,
