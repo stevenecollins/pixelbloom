@@ -1,0 +1,1 @@
+/Users/steven/Local Sites/pixelbloom/app/public/wp-content/plugins/query-monitor/wp-content/db.php
