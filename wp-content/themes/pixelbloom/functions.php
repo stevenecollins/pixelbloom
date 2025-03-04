@@ -64,3 +64,13 @@ function pixelbloom_scripts()
   wp_enqueue_style('pixelbloom-style', get_stylesheet_uri(), array(), PIXELBLOOM_VERSION);
 }
 add_action('wp_enqueue_scripts', 'pixelbloom_scripts');
+
+/**
+ * Remove core block patterns
+ */
+function pixelbloom_remove_core_patterns()
+{
+  // Remove all core patterns
+  remove_theme_support('core-block-patterns');
+}
+add_action('after_setup_theme', 'pixelbloom_remove_core_patterns');
