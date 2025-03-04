@@ -303,6 +303,52 @@
 				"typography": {
 					"fontStyle": "italic"
 				}
+			},
+			"core/cover": {
+				"spacing": {
+					"margin": {
+						"bottom": "2rem"
+					}
+				}
+			},
+			"core/image": {
+				"spacing": {
+					"margin": {
+						"bottom": "1.5rem"
+					}
+				}
+			},
+			"core/table": {
+				"spacing": {
+					"margin": {
+						"bottom": "1.5rem"
+					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)"
+				}
+			},
+			"core/pullquote": {
+				"border": {
+					"width": "0",
+					"style": "none"
+				},
+				"typography": {
+					"fontStyle": "italic",
+					"fontFamily": "var(--wp--preset--font-family--nunito)"
+				},
+				"spacing": {
+					"margin": {
+						"bottom": "2rem",
+						"top": "2rem"
+					},
+					"padding": {
+						"bottom": "1rem",
+						"left": "2rem",
+						"right": "2rem",
+						"top": "1rem"
+					}
+				}
 			}
 		},
 		"color": {
@@ -389,5 +435,5 @@
 			"name": "footer",
 			"title": "Footer"
 		}
-	],
+	]
 }
