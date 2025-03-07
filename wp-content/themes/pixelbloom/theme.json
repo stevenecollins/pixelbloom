@@ -65,6 +65,9 @@
 			]
 		},
 		"custom": {
+			"stickyHeader": {
+      	"enabled": true
+    	},
 			"spacing": {
 				"large": "max(4rem, 10vw)",
 				"medium": "max(2.5rem, 8vw)",

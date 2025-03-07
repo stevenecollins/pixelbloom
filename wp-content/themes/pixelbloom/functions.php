@@ -74,3 +74,46 @@ function pixelbloom_remove_core_patterns()
   remove_theme_support('core-block-patterns');
 }
 add_action('after_setup_theme', 'pixelbloom_remove_core_patterns');
+
+/**
+ * Enqueue scripts for sticky header control.
+ */
+function pixelbloom_enqueue_header_control()
+{
+  // Only enqueue in editor context
+  wp_enqueue_script(
+    'pixelbloom-header-control',
+    get_template_directory_uri() . '/js/header-control.js',
+    array(
+      'wp-blocks',
+      'wp-dom-ready',
+      'wp-edit-post',
+      'wp-element',
+      'wp-components',
+      'wp-compose',
+      'wp-hooks',
+      'wp-block-editor',
+    ),
+    PIXELBLOOM_VERSION,
+    true
+  );
+}
+add_action('enqueue_block_editor_assets', 'pixelbloom_enqueue_header_control');
+
+/**
+ * Enqueue frontend scripts for sticky header.
+ */
+function pixelbloom_enqueue_sticky_header_script()
+{
+  // Only on frontend
+  if (!is_admin()) {
+    wp_enqueue_script(
+      'pixelbloom-sticky-header',
+      get_template_directory_uri() . '/js/sticky-header.js',
+      array(),
+      PIXELBLOOM_VERSION,
+      true
+    );
+  }
+}
+add_action('wp_enqueue_scripts', 'pixelbloom_enqueue_sticky_header_script');

@@ -13,3 +13,24 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: pixelbloom
 Tags: 
 */
+
+/* Sticky Header Styles */
+.sticky-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+	transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.sticky-header.is-scrolled {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	background-color: var(--wp--preset--color--light) !important;
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.sticky-header {
+		transition: none;
+	}
+}
