@@ -134,7 +134,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/Poppins-Regular.woff2"
+								"file:./assets/fonts/poppins-400.woff2"
 							]
 						},
 						{
@@ -143,7 +143,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "700",
 							"src": [
-								"file:./assets/fonts/Poppins-Bold.woff2"
+								"file:./assets/fonts/poppins-700.woff2"
 							]
 						}
 					],
@@ -159,7 +159,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/Nunito-Regular.woff2"
+								"file:./assets/fonts/nunito-400.woff2"
 							]
 						},
 						{
@@ -168,7 +168,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "700",
 							"src": [
-								"file:./assets/fonts/Nunito-Bold.woff2"
+								"file:./assets/fonts/nunito-700.woff2"
 							]
 						}
 					],

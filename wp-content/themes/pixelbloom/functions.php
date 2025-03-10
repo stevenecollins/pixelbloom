@@ -76,14 +76,31 @@ function pixelbloom_remove_core_patterns()
 add_action('after_setup_theme', 'pixelbloom_remove_core_patterns');
 
 /**
- * Enqueue scripts for sticky header control.
+ * Enqueue PixelBloom scripts for both editor and frontend
  */
-function pixelbloom_enqueue_header_control()
+function pixelbloom_enqueue_scripts()
 {
-  // Only enqueue in editor context
+  // Frontend scripts
+  if (!is_admin()) {
+    wp_enqueue_script(
+      'pixelbloom-scripts',
+      get_template_directory_uri() . '/js/pixelbloom-scripts.js',
+      array(), // No dependencies needed for frontend
+      PIXELBLOOM_VERSION,
+      true
+    );
+  }
+}
+add_action('wp_enqueue_scripts', 'pixelbloom_enqueue_scripts');
+
+/**
+ * Enqueue block editor scripts
+ */
+function pixelbloom_enqueue_editor_scripts()
+{
   wp_enqueue_script(
-    'pixelbloom-header-control',
-    get_template_directory_uri() . '/js/header-control.js',
+    'pixelbloom-editor-scripts',
+    get_template_directory_uri() . '/js/pixelbloom-scripts.js',
     array(
       'wp-blocks',
       'wp-dom-ready',
@@ -92,28 +109,10 @@ function pixelbloom_enqueue_header_control()
       'wp-components',
       'wp-compose',
       'wp-hooks',
-      'wp-block-editor',
+      'wp-block-editor'
     ),
     PIXELBLOOM_VERSION,
     true
   );
 }
-add_action('enqueue_block_editor_assets', 'pixelbloom_enqueue_header_control');
-
-/**
- * Enqueue frontend scripts for sticky header.
- */
-function pixelbloom_enqueue_sticky_header_script()
-{
-  // Only on frontend
-  if (!is_admin()) {
-    wp_enqueue_script(
-      'pixelbloom-sticky-header',
-      get_template_directory_uri() . '/js/sticky-header.js',
-      array(),
-      PIXELBLOOM_VERSION,
-      true
-    );
-  }
-}
-add_action('wp_enqueue_scripts', 'pixelbloom_enqueue_sticky_header_script');
+add_action('enqueue_block_editor_assets', 'pixelbloom_enqueue_editor_scripts');
